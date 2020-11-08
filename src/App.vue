@@ -4,20 +4,23 @@
     :class="mode === 'light' ? 'bg-white text-black' : 'bg-black text-white'"
     id="app"
   >
-    <router-view :mode="mode" @switch="switchMode()" />
+    <ModeSwitcher :mode="mode" @switch="setMode($event)" />
+    <router-view />
   </div>
 </template>
 
 <script>
+import ModeSwitcher from "@/components/ModeSwitcher.vue";
 export default {
+  components: { ModeSwitcher },
   data() {
     return {
       mode: "dark"
     };
   },
   methods: {
-    switchMode() {
-      this.mode === "dark" ? (this.mode = "light") : (this.mode = "dark");
+    setMode(newmode) {
+      this.mode = newmode;
     }
   }
 };

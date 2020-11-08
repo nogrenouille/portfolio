@@ -12,7 +12,10 @@ module.exports = {
         },
         white: "#fefefe"
       }
-    }
+    },
+    minWidth: theme => ({
+      ...theme("spacing")
+    })
   },
   variants: {},
   plugins: []
