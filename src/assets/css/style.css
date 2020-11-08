@@ -1,0 +1,31 @@
+@import "reset.css";
+
+body {
+  background-color: #111111;
+  color: #eeeeee;
+  display: grid;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  padding: 5rem;
+  place-items: center;
+}
+h1 {
+  font-size: 4rem;
+}
+a,
+a:hover {
+  color: #28a55e;
+  font-weight: 600;
+}
+a:hover {
+  color: #eeeeee;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2.5rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
