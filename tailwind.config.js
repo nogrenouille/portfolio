@@ -15,6 +15,11 @@ module.exports = {
     },
     minWidth: theme => ({
       ...theme("spacing")
+    }),
+    inset: theme => ({
+      ...theme("spacing"),
+      full: "100%",
+      "1/2": "50%"
     })
   },
   variants: {},

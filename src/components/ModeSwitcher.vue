@@ -1,33 +1,49 @@
 <template>
-  <button
-    class="absolute min-w-48 p-5 right-0 top-0 focus:outline-none"
-    :class="mode === 'dark' ? 'bg-white text-black' : 'bg-black text-white'"
+  <label
+    for="mode"
+    class="bg-red-300 h-20 absolute top-5 right-5"
     @click="switchMode()"
   >
-    {{ modeLabel }}
-  </button>
+    <input type="checkbox" v-model="modeActive" name="mode" />
+  </label>
 </template>
 
 <script>
 export default {
-  computed: {
-    modeLabel() {
-      return "Make it " + this.modes.find(mode => mode !== this.mode) + "er!";
-    }
-  },
   data() {
     return {
-      modes: ["dark", "light"]
+      modeActive: null
     };
   },
   methods: {
     switchMode() {
-      this.mode === "dark" ? (this.mode = "light") : (this.mode = "dark");
-      this.$emit("switch", this.mode);
+      this.modeActive ? (this.modeActive = false) : (this.modeActive = true);
+      this.$emit("switch", this.modeActive);
     }
   },
   props: {
-    mode: String
+    darkMode: {
+      type: Boolean,
+      required: true
+    }
+  },
+  mounted() {
+    this.modeActive = this.darkMode;
   }
 };
 </script>
+<style lang="postcss">
+input[type="checkbox"] {
+  @apply absolute top-0 right-0 border-2 bg-black rounded-full border-white h-10 w-16 outline-none cursor-pointer appearance-none z-10;
+}
+input[type="checkbox"]:before {
+  content: "";
+  @apply absolute bg-white h-5 w-5 rounded-full top-0 left-0 m-2 transition-all duration-500;
+}
+input[type="checkbox"]:checked {
+  @apply bg-white;
+}
+input:checked[type="checkbox"]:before {
+  @apply bg-black left-6;
+}
+</style>

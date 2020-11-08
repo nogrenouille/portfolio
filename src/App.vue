@@ -1,10 +1,14 @@
 <template>
   <div
     class="grid place-items-center p-20 h-full"
-    :class="mode === 'light' ? 'bg-white text-black' : 'bg-black text-white'"
+    :class="darkMode ? 'bg-black text-white' : 'bg-white text-black'"
     id="app"
   >
-    <ModeSwitcher :mode="mode" @switch="setMode($event)" />
+    <ModeSwitcher
+      :darkMode="darkMode"
+      @switch="setMode($event)"
+      v-if="darkMode != null"
+    />
     <router-view />
   </div>
 </template>
@@ -15,12 +19,25 @@ export default {
   components: { ModeSwitcher },
   data() {
     return {
-      mode: "dark"
+      darkMode: null
     };
   },
   methods: {
     setMode(newmode) {
-      this.mode = newmode;
+      this.darkMode = newmode;
+      localStorage.setItem("modeActive", this.darkMode);
+    }
+  },
+  mounted() {
+    if (localStorage.getItem("darkMode")) {
+      this.darkMode = JSON.parse(localStorage.getItem("darkMode"));
+    } else {
+      const currentDate = new Date();
+      currentDate.getHours() > 18 || currentDate.getHours() < 7
+        ? (this.darkMode = true)
+        : (this.darkMode = false);
+
+      localStorage.setItem("darkMode", this.darkMode);
     }
   }
 };

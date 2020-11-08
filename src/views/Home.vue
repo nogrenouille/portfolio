@@ -1,6 +1,8 @@
 <template>
   <main>
-    <h1 class="font-bold text-4xl lg:text-6xl">nogrenouille</h1>
+    <h1 class="font-bold text-4xl lg:text-6xl">
+      nogrenouille
+    </h1>
     <p>
       En attendant l'ouverture prochaine de ce <strong>portfolio</strong>, venez
       donc me suivre sur
