@@ -25,7 +25,7 @@ export default {
   methods: {
     setMode(newmode) {
       this.darkMode = newmode;
-      localStorage.setItem("modeActive", this.darkMode);
+      localStorage.setItem("darkMode", this.darkMode);
     }
   },
   mounted() {
