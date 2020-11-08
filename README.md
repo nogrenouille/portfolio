@@ -1,3 +1,3 @@
 # portfoliovue
 
-Projet de portfolio personnel utilisant _vue-cli + tailwindcss_.
+Projet de portfolio personnel utilisant _vue-cli + tailwindcss + travis_.
