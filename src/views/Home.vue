@@ -1,5 +1,6 @@
 <template>
   <main>
+    <ModeSwitcher :mode="mode" @click="$emit('switch')" />
     <h1>nogrenouille</h1>
     <p>
       En attendant l'ouverture prochaine de ce <strong>portfolio</strong>, venez
@@ -11,7 +12,12 @@
 </template>
 
 <script>
+import ModeSwitcher from "@/components/ModeSwitcher.vue";
+
 export default {
-  name: "Home"
+  components: { ModeSwitcher },
+  props: {
+    mode: String
+  }
 };
 </script>

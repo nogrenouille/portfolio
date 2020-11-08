@@ -1,13 +1,21 @@
 @import "reset.css";
 
-body {
-  background-color: #111111;
-  color: #eeeeee;
-  display: grid;
+body,
+html {
   font-family: "Courier New", Courier, monospace;
   font-size: 1.2rem;
+  height: 100%;
+}
+#app {
+  display: grid;
+  height: 100%;
   padding: 5rem;
   place-items: center;
+  background-color: #111111;
+  color: #eeeeee;
+}
+.light {
+  filter: invert(1) hue-rotate(10deg);
 }
 h1 {
   font-size: 4rem;
