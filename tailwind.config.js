@@ -22,6 +22,8 @@ module.exports = {
       "1/2": "50%"
     })
   },
-  variants: {},
+  variants: {
+    visibility: ["responsive", "group-hover"]
+  },
   plugins: []
 };

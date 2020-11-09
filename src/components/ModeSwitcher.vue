@@ -1,10 +1,13 @@
 <template>
   <label
     for="mode"
-    class="bg-red-300 h-20 absolute top-5 right-5"
+    class="fixed top-5 right-5 h-10 w-auto pr-24 flex items-center justify-end group z-20"
     @click="switchMode()"
   >
     <input type="checkbox" v-model="modeActive" name="mode" />
+    <span class="invisible group-hover:visible transition-all">{{
+      modeActive ? "Affichage sombre" : "Affichage clair"
+    }}</span>
   </label>
 </template>
 
@@ -34,7 +37,7 @@ export default {
 </script>
 <style lang="postcss">
 input[type="checkbox"] {
-  @apply absolute top-0 right-0 border-2 bg-black rounded-full border-white h-10 w-16 outline-none cursor-pointer appearance-none z-10;
+  @apply absolute top-0 right-0 border-2 border-transparent bg-black rounded-full h-10 w-16 outline-none cursor-pointer appearance-none z-10;
 }
 input[type="checkbox"]:before {
   content: "";
