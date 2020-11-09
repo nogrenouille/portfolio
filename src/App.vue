@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid place-items-center p-20 h-full"
+    class="grid place-items-center p-10 lg:p-20 h-full"
     :class="darkMode ? 'bg-black text-white' : 'bg-white text-black'"
     id="app"
   >

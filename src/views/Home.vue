@@ -4,9 +4,8 @@
       nogrenouille
     </h1>
     <p>
-      En attendant l'ouverture prochaine de ce <strong>portfolio</strong>, venez
-      donc me suivre sur
-      <a href="https://instagram.com/nogrenouille">Instagram</a> &
+      En attendant l'ouverture de ce <strong>portfolio</strong>, retrouvez-moi
+      sur <a href="https://instagram.com/nogrenouille">Instagram</a> &
       <a href="https://twitter.com/nogrenouille">Twitter</a> :)
     </p>
   </main>
