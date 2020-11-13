@@ -18,7 +18,9 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () =>
   //     import(/* webpackChunkName: "about" */ "@/views/MyPage.vue")
-  // }
+  // },
+  { path: "/404", component: () => import("@/views/404.vue") },
+  { path: "*", redirect: "/404" }
 ];
 
 const router = new VueRouter({
